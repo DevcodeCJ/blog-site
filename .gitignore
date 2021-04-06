@@ -1,0 +1,15 @@
+# Files
+files.js
+global.js
+module.js
+people.js
+server.js
+streams.js
+test.js
+
+#Folders
+/assets
+/docs
+/html
+/node_modules
+
