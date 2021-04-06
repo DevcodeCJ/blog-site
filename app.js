@@ -3,10 +3,10 @@ const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes.js");
+const mongoString = require("./mongoString.js");
 
 // Connect to MongoDB
-const dbURI =
-  "mongodb+srv://mau:test1234@node-blogsite.wfqaq.mongodb.net/Node-BlogSite?retryWrites=true&w=majority";
+const dbURI = mongoString;
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((response) => {
