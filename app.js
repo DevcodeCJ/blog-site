@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 // Access to Form Data
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 
 // app.use((req, res, next) => {
 //   console.log("New request made:");

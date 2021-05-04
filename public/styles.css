@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
+html {
+  font-size: 16px;
+}
 body {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  font-family: "Noto Serif", serif;
-  max-width: 1200px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: #f7fbff;
 }
 p,
 h1,
@@ -21,67 +23,134 @@ ul {
 nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  text-transform: uppercase;
+  padding: 10px 0;
+  background: #24292e;
+  color: #fff;
+  height: 3.5rem;
+  align-items: center;
+  /*border-bottom: 1px solid #ddd;
+  text-transform: uppercase;*/
+}
+nav .menu-btn {
+  cursor: pointer;
+  display: none;
+  margin-right: 2.5%;
+}
+nav #check {
+  display: none;
+}
+nav #menu-close {
+  display: none;
+  margin-right: 2.5%;
 }
 nav ul {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  margin-right: 2.5%;
 }
 nav li {
   list-style-type: none;
-  margin-left: 20px;
 }
 nav h1 {
-  font-size: 3em;
+  color: #fff;
+  font-size: 2em;
 }
-nav p,
-nav a {
-  color: #777;
-  font-weight: 300;
+nav ul a {
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+nav ul a:hover {
+  background: rgba(167, 167, 167, 0.5);
+}
+nav .site-title {
+  margin-left: 2.5%;
 }
 footer {
-  color: #777;
   text-align: center;
-  margin: 80px auto 20px;
+  margin: 0 auto;
 }
-h2 {
-  margin-bottom: 40px;
+footer h2 {
+  font-size: 1.3rem;
+}
+footer p {
+  color: #222;
+  font-size: 0.9rem;
+}
+footer .socials {
+  margin: 20px auto;
+}
+footer .socials a {
+  margin: auto 10px;
+  color: rgb(194, 194, 194);
+}
+footer .socials a:hover {
+  color: #222;
 }
 h3 {
   text-transform: capitalize;
   margin-bottom: 8px;
 }
-.content {
-  margin-left: 20px;
-}
-/* index styles */
-.blogs a {
-  display: block;
-  margin: 40px 0;
-  padding-left: 30px;
-  border-left: 6px solid crimson;
+/* Page Styles */
+.blogs a:hover {
+  box-shadow: 1px 2px 3px rgba(167, 167, 167, 0.5);
 }
 .blogs a:hover h3 {
   color: crimson;
 }
-/* details styles */
-.details {
-  position: relative;
+.content {
+  background: #f7fbff;
+  margin: 0;
+  padding: 25px 2.5%;
 }
-.delete {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
+.content h2 {
+  margin-left: 2.5%;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+.content .delete {
   padding: 8px;
+  color: crimson;
 }
-.delete:hover {
+.content .delete:hover {
   cursor: pointer;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.content .features {
+  height: 3rem;
+  padding-top: 1rem;
+}
+.content .line {
+  height: 1px;
+  background: rgb(194, 194, 194);
+  width: 95%;
+  margin: 10px auto 20px;
+}
+.content .single {
+  display: block;
+  margin: 40px 2.5%;
+  padding-left: 30px;
+  border: 1px solid rgb(194, 194, 194);
+  background: #fff;
+  border-radius: 10px;
+  height: 4rem;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+.content-text {
+  margin: 40px 2.5%;
+}
+.content-text p {
+  line-height: 1.5;
+}
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98.5%;
 }
 /* create styles */
 .create-blog form {
@@ -99,15 +168,70 @@ h3 {
   display: block;
   margin-top: 24px;
 }
-textarea {
-  height: 120px;
-}
 .create-blog button {
   margin-top: 20px;
   background: crimson;
   color: white;
   padding: 6px;
   border: 0;
+  border-radius: 5px;
   font-size: 1.2em;
   cursor: pointer;
+  width: 100%;
+}
+textarea {
+  height: 120px;
+}
+.line {
+  height: 1px;
+  background: rgb(194, 194, 194);
+  width: 95%;
+  margin: 10px auto;
+}
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  nav {
+    flex-direction: row;
+  }
+  nav label {
+    order: 2;
+  }
+  nav .site-title {
+    order: 1;
+  }
+  nav #menu-close {
+    order: 3;
+  }
+  nav .menu-btn {
+    display: block;
+  }
+  nav ul {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #b6cee6d3;
+    top: 76px;
+    left: -100%;
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    height: 60px;
+  }
+  nav ul a {
+    font-size: 1.2rem;
+    padding: 7px 13px;
+    border-radius: 3px;
+  }
+  nav ul a.active,
+  nav ul a:hover {
+    background: none;
+    color: #4c5055;
+    font-weight: 600;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
 }

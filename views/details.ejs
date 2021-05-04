@@ -5,14 +5,35 @@
       <%- include('./partials/nav.ejs') %>
 
       <div class="details content">
-         <h2><%= blog.title %></h2>
-         <div class="content">
-            <p><%= blog.body %></p>
+         <div class="features">
+            <h2><%= blog.title %></h2>
+            <div class="line"></div>
          </div>
-         <a class="delete" data-doc="<%= blog._id %>">Delete</a>
+         <div class="content-wrapper">
+            <div class="content-text">
+               <p><%= blog.body %></p>
+            </div>
+            <a class="delete" data-doc="<%= blog._id %>"><i class="fas fa-minus-circle fa-2x"></i></a>
+         </div>
       </div>
 
       <%- include('./partials/footer.ejs') %>
+
+      <script>
+
+         const menuBtn = document.querySelector(".fas");
+
+         menuBtn.addEventListener("click", () => {
+            if (menuBtn.classList.contains("fa-times")) {
+               menuBtn.classList.remove("fa-times");
+               menuBtn.classList.add("fa-bars");
+            } else {
+               menuBtn.classList.remove("fa-bars");
+               menuBtn.classList.add("fa-times");
+            }
+         });
+      
+      </script>
 
       <script>
          const deleteBtn = document.querySelector('a.delete');
@@ -28,5 +49,7 @@
                })
          })
       </script>
+      <script src="https://kit.fontawesome.com/d5e6ebc1a9.js" crossorigin="anonymous"></script>
+      
    </body>
 </html> 

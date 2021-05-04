@@ -10,5 +10,23 @@
 
       <%- include('./partials/footer.ejs') %>
 
+      <script>
+
+         const menuBtn = document.querySelector(".fas");
+
+         menuBtn.addEventListener("click", () => {
+            if (menuBtn.classList.contains("fa-times")) {
+               menuBtn.classList.remove("fa-times");
+               menuBtn.classList.add("fa-bars");
+            } else {
+               menuBtn.classList.remove("fa-bars");
+               menuBtn.classList.add("fa-times");
+            }
+         });
+      
+      </script>
+
+      <script src="https://kit.fontawesome.com/d5e6ebc1a9.js" crossorigin="anonymous"></script>
+
    </body>
 </html>
