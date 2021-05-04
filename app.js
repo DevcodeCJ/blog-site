@@ -1,9 +1,11 @@
 const express = require("express");
-const app = express();
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes.js");
 const mongoString = require("./mongoString.js");
+
+// Setup Express App & Port
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
@@ -16,9 +18,6 @@ mongoose
     console.log("Connected to the database");
   })
   .catch((err) => console.log(err));
-
-// Register View Engine
-app.set("view engine", "ejs");
 
 // Middleware
 app.use(express.static("public"));
@@ -99,13 +98,16 @@ app.get("/about", (req, res) => {
   // res.status(200).sendFile("./views/about.html", { root: __dirname });
 });
 
-// Blog Routes
-app.use(blogRoutes);
-
 // Redirects
 app.get("/about-us", (req, res) => {
   res.redirect("/about");
 });
+
+// Blog Routes
+app.use(blogRoutes);
+
+// Register View Engine
+app.set("view engine", "ejs");
 
 // 404 Page
 app.use((req, res) => {
