@@ -2,7 +2,7 @@ const express = require("express");
 // const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes.js");
-const mongoString = require("./mongoString.js");
+const mongoString = require("./mongoString");
 
 // Setup Express App & Port
 const app = express();
