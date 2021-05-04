@@ -2,11 +2,13 @@ const express = require("express");
 // const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes.js");
-const mongoString = require("./mongoString");
+const mongoString = require("./mongoString.js");
 
 // Setup Express App & Port
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.listen(PORT);
 
 // Connect to MongoDB
 const dbURI = mongoString;
@@ -14,7 +16,6 @@ mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((response) => {
     // Launch Express App once connected to db
-    app.listen(PORT);
     console.log("Connected to the database");
   })
   .catch((err) => console.log(err));
