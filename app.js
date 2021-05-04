@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes.js");
 const mongoString = require("./mongoString.js");
+const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
 const dbURI = mongoString;
@@ -11,7 +12,7 @@ mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((response) => {
     // Launch Express App once connected to db
-    app.listen(3000);
+    app.listen(PORT);
     console.log("Connected to the database");
   })
   .catch((err) => console.log(err));
