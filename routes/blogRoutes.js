@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("../views/about", { title: "About" });
+  res.render("about", { title: "About" });
   // res.status(200).sendFile("./views/about.html", { root: __dirname });
 });
 
