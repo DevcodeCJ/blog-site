@@ -71,7 +71,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Listen for Requests | Routes
 app.get("/", (req, res) => {
-  res.redirect("/blogs");
+  res.redirect("/about");
   // const blogs = [
   //   {
   //     title: "Yoshi finds eggs",
