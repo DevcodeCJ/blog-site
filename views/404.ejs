@@ -1,14 +1,45 @@
 <html lang="en">
-   <%- include('./partials/head.ejs') %>
+   <head>
+      <meta char="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Blog Site | About</title>
+      <link rel="stylesheet" href="/styles.css">
+   </head>
    <body>
-
-      <%- include('./partials/nav.ejs') %>
-
+      <!-- Nav -->
+      <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+         </label>
+         <div class="site-title">
+            <a href="/"><h1>BlogBase</h1></a>
+         </div>
+         <ul>
+            <li class="active"><a href="/">Blogs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blogs/create">New Blog</a></li>
+         </ul>
+         <div id=menu-close>
+            <i class="fas fa-times fa-2x"></i>
+         </div>
+      </nav>
+      <!-- Content -->
       <div class="not-found content">
          OOPS!, page not found :)
       </div>
-
-      <%- include('./partials/footer.ejs') %>
+      <!-- Footer -->
+      <footer>
+         <div class="line"></div>
+            <a href="/"><h2>BlogBase</h2></a>
+            <p>An open blog site</p>
+         <div class="socials">
+            <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+         </div>
+         <p>Copyright &copy; BlogBase 2021</p>
+      </footer>
 
       <script>
 

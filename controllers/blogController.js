@@ -26,7 +26,7 @@ const blog_create_post = (req, res) => {
 };
 
 const blog_create_get = (req, res) => {
-  res.render("create", { title: "Create a new blog" });
+  res.render("create");
 };
 
 const blog_details = (req, res) => {
