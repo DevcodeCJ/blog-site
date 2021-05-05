@@ -8,8 +8,6 @@ const mongoString = require("./mongoString.js");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT);
-
 // Connect to MongoDB
 const dbURI = mongoString;
 mongoose
@@ -17,6 +15,7 @@ mongoose
   .then((response) => {
     // Launch Express App once connected to db
     console.log("Connected to the database");
+    app.listen(PORT);
   })
   .catch((err) => console.log(err));
 
@@ -71,7 +70,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Listen for Requests | Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.redirect("/blogs");
   // const blogs = [
   //   {
   //     title: "Yoshi finds eggs",
