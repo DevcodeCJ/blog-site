@@ -94,13 +94,13 @@ app.get("/", (req, res) => {
   // console.log(__dirname);
 });
 
-// Blog Routes
-app.use(blogRoutes);
-
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
   // res.status(200).sendFile("./views/about.html", { root: __dirname });
 });
+
+// Blog Routes
+app.use(blogRoutes);
 
 // Redirects
 app.get("/about-us", (req, res) => {
