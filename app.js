@@ -71,12 +71,9 @@ app.use(express.urlencoded({ extended: true }));
 //     });
 // });
 
-// Blog Routes
-app.use(blogRoutes);
-
 // Listen for Requests | Routes
 app.get("/", (req, res) => {
-  res.render("/blogs");
+  res.redirect("/blogs");
   // const blogs = [
   //   {
   //     title: "Yoshi finds eggs",
@@ -96,6 +93,9 @@ app.get("/", (req, res) => {
   // res.send("<h1>Home Page</h1>");
   // console.log(__dirname);
 });
+
+// Blog Routes
+app.use(blogRoutes);
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
