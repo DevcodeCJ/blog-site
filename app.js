@@ -20,8 +20,6 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-// Middleware
-app.use(express.static("public"));
 // Access to Form Data
 app.use(express.urlencoded({ extended: true }));
 // app.use(morgan("dev"));
@@ -99,16 +97,19 @@ app.get("/about", (req, res) => {
   // res.status(200).sendFile("./views/about.html", { root: __dirname });
 });
 
-// Blog Routes
-app.use("/", blogRoutes);
-
 // Redirects
 app.get("/about-us", (req, res) => {
   res.redirect("/about");
 });
 
+// Blog Routes
+app.use("/", blogRoutes);
+
 // Register View Engine
 app.set("view engine", "ejs");
+
+// Access to Static Files
+app.use(express.static("public"));
 
 // 404 Page
 app.use((req, res) => {
