@@ -71,6 +71,9 @@ app.use(express.urlencoded({ extended: true }));
 //     });
 // });
 
+// Register View Engine
+app.set("view engine", "ejs");
+
 // Listen for Requests | Routes
 app.get("/", (req, res) => {
   res.render("index");
@@ -106,9 +109,6 @@ app.get("/about-us", (req, res) => {
 
 // Blog Routes
 app.use(blogRoutes);
-
-// Register View Engine
-app.set("view engine", "ejs");
 
 // 404 Page
 app.use((req, res) => {
