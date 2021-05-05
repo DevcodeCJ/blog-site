@@ -71,12 +71,12 @@ app.use(express.urlencoded({ extended: true }));
 //     });
 // });
 
-// Register View Engine
-app.set("view engine", "ejs");
+// Blog Routes
+app.use(blogRoutes);
 
 // Listen for Requests | Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("/blogs");
   // const blogs = [
   //   {
   //     title: "Yoshi finds eggs",
@@ -107,8 +107,8 @@ app.get("/about-us", (req, res) => {
   res.redirect("/about");
 });
 
-// Blog Routes
-app.use(blogRoutes);
+// Register View Engine
+app.set("view engine", "ejs");
 
 // 404 Page
 app.use((req, res) => {
