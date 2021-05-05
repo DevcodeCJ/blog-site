@@ -6,9 +6,25 @@
       <link rel="stylesheet" href="/styles.css">
    </head>
    <body>
-
-      <%- include("./partials/nav.ejs") %>
-
+      <!-- Nav -->
+      <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+         </label>
+         <div class="site-title">
+            <a href="/"><h1>BlogBase</h1></a>
+         </div>
+         <ul>
+            <li class="active"><a href="/">Blogs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blogs/create">New Blog</a></li>
+         </ul>
+         <div id=menu-close>
+            <i class="fas fa-times fa-2x"></i>
+         </div>
+      </nav>
+      <!-- Content -->
       <div class="about content">
          <div class="features">
             <h2>About Us</h2>
@@ -20,8 +36,18 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum corporis ad quis consequuntur cumque ipsa ratione doloremque tempora itaque obcaecati!</p>
          </div>
       </div>
-
-      <%- include("./partials/footer.ejs") %>
+      <!-- Footer -->
+      <footer>
+         <div class="line"></div>
+            <a href="/"><h2>BlogBase</h2></a>
+            <p>An open blog site</p>
+         <div class="socials">
+            <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+         </div>
+         <p>Copyright &copy; BlogBase 2021</p>
+      </footer>
 
       <script>
 
