@@ -4,7 +4,7 @@
 
 A basic NodeJS blog app, set up with the bare minimum functionality to display blogs, add blogs and delete exiting blogs from a MongoDB backend. It's currently run on localhost, listening on port 3000.
 
-- 👉 Now hosted on Heroku. Visit the link [here](...)
+- 👉 Now hosted on Heroku. Visit the link [here](https://blogbase-app.herokuapp.com/blogs)
 
 ## Building the project
 
